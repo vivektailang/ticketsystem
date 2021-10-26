@@ -1,0 +1,15 @@
+.mat-card-header{
+  background-color:green !important;
+  padding:10px !important;
+  font-size: 20px;
+  text-align: center;
+}
+
+ .mat-card{
+  background-color:green !important;
+  padding:10 !important;
+}
+
+.mat-card-content{
+  padding:10px !important;
+}
