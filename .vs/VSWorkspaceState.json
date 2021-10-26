@@ -3,12 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components",
     "\\src\\app\\components\\home",
     "\\src\\app\\components\\login",
     "\\src\\app\\components\\nav-bar",
+    "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\services\\login.service.spec.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service'
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  constructor(private loginService:LoginService) { }
 
   credentials={
     username:'',
@@ -17,8 +20,16 @@ export class LoginComponent implements OnInit {
      if((this.credentials.username != '' && this.credentials.password != '')
      &&
      (this.credentials.username != null && this.credentials.password != null)) {
-       //console.log("username: " + this.credentials.username);
-       //console.log("password: " + this.credentials.password);
+       console.log("password: " + this.credentials);
+       this.loginService.generateToken(this.credentials).subscribe(
+          (response:any)=>{
+            this.loginService.loginUser(response.token);
+            window.location.href="/dashboard";
+          },
+          error=>{
+            console.log("Error = " + error.message);
+          }
+       )
 
 
      } else {
@@ -26,8 +37,6 @@ export class LoginComponent implements OnInit {
      }
 
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }

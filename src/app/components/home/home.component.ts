@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InformationService } from '../../services/information.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  subject:'';
+  desc:'';
+  panelOpenState = false;
+
+  constructor(private informationService:InformationService) {
+      this.subject = '';
+      this.desc = '';
+      console.log('In information');
+      this.getInfo();
+  }
+
+
+  getInfo() {
+
+    this.informationService.homeInfo(null).subscribe(
+            (response:any)=>{
+              this.subject = response.subject;
+              this.desc = response.desc;
+            },
+            error=>{
+              console.log("Error = " + error.message);
+            }
+         )
+
+  }
 
   ngOnInit(): void {
   }

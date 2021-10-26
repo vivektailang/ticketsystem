@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+import { AuthGuard } from './services/auth.guard';
+
 const routes: Routes = [
   {
     path:'',
@@ -19,7 +21,8 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent,
-    pathMatch:'full'
+    pathMatch:'full',
+    canActivate:[AuthGuard]
   }
 ];
 
