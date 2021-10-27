@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private informationService:InformationService) {
       this.subject = '';
       this.desc = '';
-      console.log('In information');
+      //console.log('In information');
       this.getInfo();
   }
 

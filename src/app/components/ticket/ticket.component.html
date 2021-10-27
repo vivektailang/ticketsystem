@@ -1,0 +1,29 @@
+<h1 class="text-center">Ticket Details</h1>
+<mat-accordion class="mt mat-elevation-z8">
+  <mat-expansion-panel *ngFor="let tic of ticket" (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="text-left mtmtall">
+      <mat-panel-title class="text-left" style="background-color: {{tic.colorStatus}}">
+        Ticket Id: {{tic.id}} - {{tic.status}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Subject: {{tic.subject}} <br>
+        Description: {{tic.desc}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel *ngFor="let issue of tic.issues">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Issue Id: {{issue.id}} - {{issue.status}}
+          </mat-panel-title>
+          <mat-panel-description>
+            <p>Issue: {{issue.subject}}</p>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        Details: {{issue.desc}}
+    </mat-expansion-panel>
+  </mat-expansion-panel>
+</mat-accordion>
+
+

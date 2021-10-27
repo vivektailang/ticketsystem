@@ -12,6 +12,11 @@ export class LoginService {
 
   constructor(private http:HttpClient) {  }
 
+  loggedUserInfo={
+    username:'',
+    password:''
+  }
+
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,19 +25,13 @@ export class LoginService {
   }
 
   generateToken(credentials:any) {
-    //token generate
-    //console.log("JSON.stringify(credentials)" + JSON.stringify(credentials));
-    //let token = this.http.post<any>(this.url + '/ticket/token', JSON.stringify(credentials), this.httpOptions);
-    //let token = this.http.post(`${this.url}/ticket/token`, JSON.stringify(credentials));
-    //console.log(token);
-    return this.http.post<any>(this.url + '/ticket/token', JSON.stringify(credentials), this.httpOptions);
+    return this.http.post<any>(this.url + '/login/token', JSON.stringify(credentials), this.httpOptions);
   }
 
-
-
   //login the user
-  loginUser(token:any) {
+  loginUser(token:any, username:any) {
     localStorage.setItem("token", token);
+    localStorage.setItem("username", username);
     return true;
   }
 
@@ -50,11 +49,16 @@ export class LoginService {
   //For logout user
   logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
     return true;
   }
 
   //Get token for user
   getToken() {
     return localStorage.getItem("token");
+  }
+
+  getUsername():any {
+    return localStorage.getItem("username");
   }
 }

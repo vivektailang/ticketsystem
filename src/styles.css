@@ -4,13 +4,19 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .text-center {
-  text-align: center
+  text-align: center;
 }
 
 .mt{
   margin-top: 20px;
 }
 
+.mtall{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
 .text-left {
-  text-align: left
+  text-align: left;
 }

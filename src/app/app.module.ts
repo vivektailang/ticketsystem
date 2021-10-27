@@ -17,6 +17,9 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { TicketComponent } from './components/ticket/ticket.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     NavBarComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatExpansionModule,
     MatCardModule,
+    MatTableModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
