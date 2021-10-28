@@ -1,7 +1,10 @@
 <div class="bootstrap-wrapper">
-  <div class="container mt">
-    <h1 class="text-center">{{subject}}</h1>
-    <mat-card class="text-left">{{desc}}</mat-card>
-
-  </div>  
+  <div class="container mt text-center">
+    <p>{{subject}}</p>
+    <mat-card-header>{{desc}}</mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card *ngFor="let detail of details" class="text-left mt">
+        <p>{{detail.id}} - {{detail.desc}}</p>
+    </mat-card>
+  </div>
 </div>

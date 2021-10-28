@@ -1,13 +1,16 @@
 .mat-card-header{
-  background-color:green !important;
-  padding:10px !important;
+  background-color:white !important;
+  padding:10px 10px 10px 10px !important;
   font-size: 20px;
   text-align: center;
+  align: center;
 }
 
  .mat-card{
-  background-color:green !important;
+  background-color:lightgrey !important;
   padding:10 !important;
+  font-color: black;
+  color: black;
 }
 
 .mat-card-content{
