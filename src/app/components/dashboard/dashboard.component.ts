@@ -3,6 +3,7 @@ import { InformationService } from '../../services/information.service';
 import { UserNotifications } from './user-notifications';
 import { LoginService } from '../../services/login.service';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
