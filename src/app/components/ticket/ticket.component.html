@@ -4,14 +4,13 @@
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header class="text-left mtmtall">
       <mat-panel-title class="text-left" style="background-color: {{tic.colorStatus}}">
-        Ticket Id: {{tic.id}} - {{tic.status}}
+        <a href="ticketedit?ticketid={{tic.id}}">IN-MP-00{{tic.id}} - {{tic.status}}</a>
       </mat-panel-title>
       <mat-panel-description>
         Subject: {{tic.subject}} <br>
         Description: {{tic.desc}}
       </mat-panel-description>
     </mat-expansion-panel-header>
-      <mat-divider></mat-divider>
       <mat-expansion-panel *ngFor="let issue of tic.issues">
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -25,5 +24,3 @@
     </mat-expansion-panel>
   </mat-expansion-panel>
 </mat-accordion>
-
-

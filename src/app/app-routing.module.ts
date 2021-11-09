@@ -33,6 +33,12 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
+    path:'ticketedit',
+    component:TicketComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  },
+  {
     path:'asset',
     component:AssetComponent,
     pathMatch:'full',

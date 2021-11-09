@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
           labels: ['Pending', 'Abondaned', 'In Progress', 'Closed', 'Opened', 'New'],
           datasets: [{
               label: 'Total # of Tickets',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [1, 0, 2, 0, 0, 0],
               backgroundColor: '#581845',
               borderColor: '900C3F',
               borderWidth: 1
@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
           labels: ['Pending', 'Abondaned', 'In Progress', 'Closed', 'Opened', 'New'],
           datasets: [{
               label: 'Total # of Tickets',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [1, 0, 2, 0, 0, 0],
               backgroundColor: ['#DAF7A6','#FFC300','#FF5733','#C70039','#900C3F','#581845'],
               borderWidth: 1
           }]
