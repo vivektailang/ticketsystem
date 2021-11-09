@@ -20,6 +20,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { AssetComponent } from './components/asset/asset.component';
+import { TrackComponent } from './components/track/track.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { MatDividerModule } from '@angular/material/divider';
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-    TicketComponent
+    TicketComponent,
+    AssetComponent,
+    TrackComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatTableModule,
     MatDividerModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

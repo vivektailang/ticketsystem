@@ -1,12 +1,16 @@
+
 <mat-toolbar color="primary">
-  
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+  </button>
+
   <span><a *ngIf = "!loggedIn" mat-icon-button routerLink="/">Ticket System App</a></span>
 
   <span><a mat-icon-button routerLink="/"><a *ngIf = "loggedIn" mat-icon-button >Welcome {{username}}</a></a></span>
   <span *ngIf = "!loggedIn" class="example-spacer_1"></span>
-  
+
   <span class="example-spacer"></span>
-  <a *ngIf = "loggedIn" mat-icon-button routerLink="/dashboard">Dashboard</a>
+  <a *ngIf = "loggedIn" mat-icon-button routerLink="/dashboard" >Dashboard</a>
   <span class="example-spacer"></span>
   <a *ngIf = "loggedIn" mat-icon-button routerLink="/ticket">Ticket</a>
   <span class="example-spacer"></span>

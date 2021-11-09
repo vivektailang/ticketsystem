@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InformationService } from '../../services/information.service';
 import { UserNotifications } from './user-notifications';
 import { LoginService } from '../../services/login.service';
-
+import { Chart, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,9 @@ import { LoginService } from '../../services/login.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private informationService:InformationService,
-                private loginService:LoginService) { }
+                private loginService:LoginService) {
+                Chart.register(...registerables);
+  }
 
   username: string = '';
   userId: string = '';
@@ -20,7 +22,8 @@ export class DashboardComponent implements OnInit {
   userPosition = '';
   userNotifications: UserNotifications[] = [];
   displayedColumns: string[] = ['id', 'tasks','desc'];
-
+  chart: any = [];
+  barchart: any = [];
 
   //var notifications: note;
 
@@ -29,6 +32,34 @@ export class DashboardComponent implements OnInit {
     this.userRole = '';
     this.userPosition = '';
     this.getUserInfo(this.loginService.getUsername());
+
+    //Chart prepration
+    this.chart = new Chart('canvas', {
+      type: 'line',
+      data: {
+          labels: ['Pending', 'Abondaned', 'In Progress', 'Closed', 'Opened', 'New'],
+          datasets: [{
+              label: 'Total # of Tickets',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: '#581845',
+              borderColor: '900C3F',
+              borderWidth: 1
+          }]
+      },
+    });
+
+    this.barchart = new Chart('canvasbar', {
+      type: 'bar',
+      data: {
+          labels: ['Pending', 'Abondaned', 'In Progress', 'Closed', 'Opened', 'New'],
+          datasets: [{
+              label: 'Total # of Tickets',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: ['#DAF7A6','#FFC300','#FF5733','#C70039','#900C3F','#581845'],
+              borderWidth: 1
+          }]
+      },
+    });
   }
 
   getUserInfo(username: any) {

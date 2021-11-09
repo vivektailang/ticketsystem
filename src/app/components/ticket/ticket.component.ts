@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from './ticket';
-import { Issue } from './issue';
 import { TicketService } from '../../services/ticket.service';
 import { LoginService } from '../../services/login.service';
 

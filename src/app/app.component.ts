@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'VIS Ltd - Ticket System';
+
+constructor() {
+
+}
+
+ngOnInit() {
+
+}
+
 }

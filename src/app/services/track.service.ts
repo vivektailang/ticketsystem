@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Ticket } from '../components/ticket/ticket';
+import { Track } from '../components/track/track';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TicketService {
+export class TrackService {
 
   url="http://localhost:7070";
 
@@ -20,7 +20,7 @@ export class TicketService {
     })
   }
 
-  getTickets(username:any): Observable<Ticket[]> {
-    return this.http.get<any>(this.url + '/ticket/details/'+username, this.httpOptions);
+  getTrack(username:any): Observable<Track[]> {
+    return this.http.get<any>(this.url + '/track/details/'+username, this.httpOptions);
   }
 }
